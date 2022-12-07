@@ -1,0 +1,77 @@
+[tool.black]
+line-length = 120
+target-version = ['py{{ cookiecutter.python_version.replace(".", "") }}']
+exclude = '''
+/(
+   \.pytest_cache
+  | htmlcov
+  | test-results
+)/
+'''
+
+[tool.isort]
+profile = 'black'
+line_length = 120
+lines_between_types = 1
+lines_after_imports = 2
+
+[tool.bandit]
+exclude_dirs = ['.pytest_cache', 'htmlcov', 'test-results']
+skips = ['B101', 'B601']
+
+[tool.pylama]
+format = 'pycodestyle'
+skip = '*/.tox/*,*/.env/*,*/migrations/*,splinter-tests/*,*/tests/*'
+linters = 'pycodestyle,pyflakes,mccabe,radon'
+
+[[tool.pylama.files]]
+path = '*/__init__.py'
+# W0611: imported but unused [pyflakes]
+ignore = 'W0401,W0611'
+
+[tool.pylama.linter.pycodestyle]
+max_line_length = 120
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+python_files = [
+    "tests.py",
+    "test_*.py",
+]
+asyncio_mode = "auto"
+
+####### POETRY #######
+
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "0.1.0"
+description = ""
+authors = ["ao"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^{{ cookiecutter.python_version }}"
+fastapi = "*"
+gunicorn = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+sentry-sdk = {extras = ["fastapi"], version = "*"}
+dependency-injector = "*"
+fastapi-utils = "*"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+isort = "*"
+pylama = "*"
+bandit = {extras = ["toml"], version = "*"}
+safety = "*"
+pytest = "*"
+pytest-asyncio = "*"
+pytest-mock = "*"
+asgi-lifespan = "*"
+httpx = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+####### POETRY #######
