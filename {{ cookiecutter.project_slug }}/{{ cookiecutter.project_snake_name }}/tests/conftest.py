@@ -10,10 +10,10 @@ from {{ cookiecutter.project_snake_name }}.main import get_application
 
 @pytest.fixture()
 async def app() -> FastAPI:
-    settings.DEBUG = False
+    settings.DEBUG = True
     settings.SENTRY_ON = False
     # Disable periodic tasks for tests
-    settings.ENABLE_TASKS = False
+    settings.ENABLE_PERIODIC_TASKS = False
     app = get_application()
     return app
 

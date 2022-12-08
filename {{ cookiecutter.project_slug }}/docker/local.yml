@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  {{ cookiecutter.project_slug }}:
+    ports:
+      - ${LOCAL_IP:-127.0.0.1}:${LOCAL_PORT:-8000}:8000
+    volumes:
+      - ../:/opt/{{ cookiecutter.project_slug }}
+
+

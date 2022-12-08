@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  {{ cookiecutter.project_slug }}:
+    image: ${HUB_HOST}/${PROJECT_NAME}/{{ cookiecutter.project_slug }}-local:${PROJECT_VERSION}
+    build:
+      context: ..
+      dockerfile: docker/images/Dockerfile
+      target: local

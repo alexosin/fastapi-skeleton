@@ -13,7 +13,7 @@ async def test_read_home_success(client: AsyncClient):
 async def test_project_info(client: AsyncClient):
     url = router.url_path_for("project_info")
     response = await client.get(url)
-    assert response == {
+    assert response.json() == {
         "project_name": settings.PROJECT_NAME,
         "mode": "debug",
         "sentry_enabled": "no",

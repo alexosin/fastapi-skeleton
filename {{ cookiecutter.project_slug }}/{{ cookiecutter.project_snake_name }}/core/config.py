@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from pydantic import AnyUrl, BaseSettings, PositiveInt
+from pydantic import AnyUrl, BaseSettings
 
 
 class Settings(BaseSettings):

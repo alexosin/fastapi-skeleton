@@ -8,7 +8,7 @@ class Container(containers.DeclarativeContainer):
     wiring_config = containers.WiringConfiguration(
         modules=[
             "{{ cookiecutter.project_snake_name }}.api.routes",
-            "{{ cookiecutter.project_snake_name }}.periodic_tasks"
+            "{{ cookiecutter.project_snake_name }}.periodic_tasks",
         ]
     )
 
