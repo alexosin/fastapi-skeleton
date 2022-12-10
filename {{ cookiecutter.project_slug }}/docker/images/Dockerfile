@@ -1,4 +1,4 @@
-FROM python:3.10.9-slim as base
+FROM python:{{ cookiecutter.patch_python_version }}-slim as base
 
 ARG DOCKER_USER_ID=1000
 ARG DOCKER_GROUP_ID=1000
