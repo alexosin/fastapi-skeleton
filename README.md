@@ -6,20 +6,23 @@
 - [Dependency Injector](https://python-dependency-injector.ets-labs.org/) - implement the support of DeclarativeContainer with:
     - config and container providers
     - wiring routes and periodic_tasks modules
-- Support `docker` and `docker compose` for local and live environments.
-- `pyproject.toml` support.
-- `Poetry` tool for packages management.
+- Support `docker` and `docker compose` for local and live environments
+- `pyproject.toml` support
+- `Poetry` tool for packages management
 - Built-in linters:
     - `black`
     - `isort`
     - `pylama`
+    - `bandit`
     - `safety`
-- Example of [repeated tasks](https://fastapi-utils.davidmontague.xyz/user-guide/repeated-tasks/) implementation in combination with `dependency-injector`.
-- startup and shutdown events.
+- Integration with [Sentry](https://sentry.io/)
+- [pytest](https://docs.pytest.org/) configuration
+- Example of [repeated tasks](https://fastapi-utils.davidmontague.xyz/user-guide/repeated-tasks/) implementation in combination with `dependency-injector`
+- startup and shutdown events
 
 *WIP*:
-- `pre-commit` config.
-- Migration to `ruff` linter.
+- [Pre-commit](https://pre-commit.com/) support
+- Migration to `ruff` linter
 
 ## How to use it
 
